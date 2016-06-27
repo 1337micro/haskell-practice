@@ -1,7 +1,7 @@
 main :: IO ()
-main = print (lastEle [3,2,4,2, 8] 2)
+main = print (lastEle [3,2,4,2, 8] 4)
 
-lastEle :: (Num a) => [a] -> a -> a
+lastEle :: (Num a, Eq b, Num b) => [a] -> b -> a
 lastEle xs index
   | index == 1 = head xs
   | otherwise = lastEle (tail xs) (index - 1)
